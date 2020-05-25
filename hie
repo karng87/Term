@@ -1,0 +1,5 @@
+http://marco-lopes.com/articles/Vim-and-Haskell-in-2019/
+
+https://github.com/haskell/haskell-ide-engine/#installation
+
+stack --resolver=nightly install apply-refact
