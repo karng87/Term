@@ -5,7 +5,7 @@
 	(>>=) :: m a -> (a-> m b) -> m b
 	return :: a -> m a
 ```
-> bind operator   = takes care of combining the output of two computations
+> bind operator   = takes care of combining the output of two computations  
 > do-notaion as syntactic sugar for monadic expressions
 
 ```haskell
