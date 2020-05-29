@@ -6,6 +6,6 @@
 >
 > _meter_
 >> 측정하다.
-
+---
 2. argument
 ```class Monad m =>```
