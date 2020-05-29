@@ -1,5 +1,4 @@
-# A Poor Man's Concurrency Monad
-[file link](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=18AD868210C6DE3AA7515431AA379EFB?doi=10.1.1.39.8039&rep=rep1&type=pdf)
+# A Poor Man's Concurrency Monad [file link]:(http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=18AD868210C6DE3AA7515431AA379EFB?doi=10.1.1.39.8039&rep=rep1&type=pdf)
 
 >   class Monad m where
 >>	(>>=) :: m a -> (a-> m b) -> m b
