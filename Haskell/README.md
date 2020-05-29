@@ -62,5 +62,17 @@ asIntError list@(x:xs) | x == '-' = fmap negate $ asIntEither $ xs
 
                        | otherwise  = Left "Invalid input format/charactors"
 
+foldGroupBy :: (a -> a -> Bool) -> [a] -> [[a]]
+foldGroupBy gFunc arg = foldr stepFunc [] arg
+                        where   
+                            stepFunc x [] = [[x]]
+                            stepFunc x (ys@(y:_):zs) 
+                                 | gFunc x y = (x:ys):zs
+                                 | otherwise = [x]:ys:zs
+fGroupBy :: (a -> a -> Bool) -> [a] -> [[a]]
+fGroupBy gFunc list = foldr (\x acc -> if (length acc > 0 && gFunc x (head (head acc)))
+                                        then (x:(head acc)):(tail acc)
+                                        else [x]:acc) [] list
+
 ```
 > foldr foldl 함수의 인자 순서가 다름 주의
