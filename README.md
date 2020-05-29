@@ -1,6 +1,6 @@
 # terminal-nix
 1. parameter, parametrize
-> __para__
+> **_para_**
 >> 부속 건물 처럼 이웃해 있는 연결되어 있는 
 >> 부, 이웃
 >
