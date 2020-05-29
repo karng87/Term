@@ -8,6 +8,4 @@
 >> 측정하다.
 
 2. argument
-```
-class Monad m =>
-```
+```class Monad m =>```
