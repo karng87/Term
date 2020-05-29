@@ -1,9 +1,9 @@
 # A Poor Man's Concurrency Monad [file link](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=18AD868210C6DE3AA7515431AA379EFB?doi=10.1.1.39.8039&rep=rep1&type=pdf)
-
->   class Monad m where
->>	(>>=) :: m a -> (a-> m b) -> m b
->>	return :: a -> m a
-
+```haskell
+   class Monad m where
+	(>>=) :: m a -> (a-> m b) -> m b
+	return :: a -> m a
+```
 -- bind operator   = takes care of combining the output of two computations
 
 -- do-notaion as syntactic sugar for monadic expressions
