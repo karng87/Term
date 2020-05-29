@@ -40,5 +40,28 @@
 
 foldrTakeWile :: (a -> Bool) -> [a] -> [a]
 foldrTakeWile f xs = foldr (\x acc -> if f x then x : acc else []) [] xs
+
+foldAll :: (a -> Bool) -> [a] -> Bool
+foldAll predicateFunc xs = foldr (\x acc -> predicateFunc x && acc) True  xs
+
+foldAny :: (a -> Bool) -> [a] -> Bool
+foldAny predicateFunc xs = foldr (\x acc -> predicateFunc x || acc) False xs
+
+asIntEither :: String -> Either String Int
+asIntEither all@(x:xs) | x == '-' =  fmap negate $ asIntEither xs
+                       | and $ map isDigit all = Right $ foldl ((+).(*10)) 0 (map digitToInt all)
+                       | otherwise  = Left "Invalid input format/charactors"
+
+asIntError :: String -> Either String Int
+asIntError list@(x:xs) | x == '-' = fmap negate $ asIntEither $ xs
+                       | and $ map isDigit list = -- == all isDigit list
+                            foldl 
+                                (\acc x -> 
+                                    let next = fmap ((+ (digitToInt x)) . (*10)) acc
+                                    in if (next > acc) then next else Left "Int overflow") 
+                                (Right 0) list 
+
+                       | otherwise  = Left "Invalid input format/charactors"
+
 ```
 > foldr foldl 함수의 인자 순서가 다름 주의
