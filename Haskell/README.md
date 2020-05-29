@@ -37,5 +37,8 @@
     0 : 1 : 2 : [] ==== 중요 종료됨.
     =
     [0, 1, 2]
+
+foldrTakeWile :: (a -> Bool) -> [a] -> [a]
+foldrTakeWile f xs = foldr (\x acc -> if f x then x : acc else []) [] xs
 ```
 > foldr foldl 함수의 인자 순서가 다름 주의
