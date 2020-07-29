@@ -10,7 +10,7 @@
 > ## 2. specify. 
 >> spell out. 
 >> list. 
->> detail. 
+>> detail.  
 > 구체적이고 명확하게 ~ 라고 말하다.  
 > 딱 꼬집어 지정하다.  
 ---
