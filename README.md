@@ -26,7 +26,7 @@
 ## concrete
   > existing in 
   >> a material or
-  >
+  >>
   >> physical form, 
-  >
+  >>
   >> not abstract)
