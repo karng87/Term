@@ -23,3 +23,8 @@
   >> a dish of cooked meat cut into samll pieces,
       usually with potatoes
 
+## concrete
+  > existing in 
+  >> a material or 
+  >> physical form, 
+  >> not abstract)
