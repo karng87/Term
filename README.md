@@ -8,18 +8,18 @@
 >>> 측정하다.
 ---
 > ## specify.
->> spell out.
->>
->> list.
->>
->> detail. 
+  >> spell out.
+  >>
+  >> list.
+  >>
+  >> detail. 
 >
->> 구체적이고 명확하게 ~ 라고 말하다.  
+  >> 구체적이고 명확하게 ~ 라고 말하다.  
 >
->> 딱 꼬집어 지정하다.  
+  >> 딱 꼬집어 지정하다.  
 ---
 > ## hashing
->> #   
->> a dish of cooked meat cut into samll pieces,
-usually with potatoes
+  >> \#   
+  >> a dish of cooked meat cut into samll pieces,
+      usually with potatoes
 
