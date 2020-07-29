@@ -13,12 +13,12 @@
   >
   > detail, 
   >
-  > 구체적이고 명확하게 ~ 라고 말하다.  
-  >
-  > 딱 꼬집어 지정하다.  
+  >> 구체적이고 명확하게 ~ 라고 말하다.  
+  >>
+  >> 딱 꼬집어 지정하다.  
 ---
-## hashing
+## hash
   > \#,   
-  > a dish of cooked meat cut into samll pieces,
+  >> a dish of cooked meat cut into samll pieces,
       usually with potatoes
 
