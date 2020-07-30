@@ -30,3 +30,25 @@
   >> physical form, 
   >>
   >> not abstract
+
+## archive
+> a file 
+>> that is composed of one or more computer files along with __metadata__. 
+>
+>> Archive files are used to collect multiple data files together into a single file 
+>
+>> for easier __portability__ and __storage__, or simply to compress files to use __less storage__ space. 
+>
+>> Archive files often store __directory structures__, error detection and correction information, arbitrary comments, and sometimes use built-in encryption.
+
+## pakage
+> package manager 프로그램이 다룰수 있도록 archive 파일에 manifest를 추가한 file
+>
+>> A package manager or package-management system is a collection of software tools 
+>>
+>>> that automates the process of installing, upgrading, configuring, and removing computer programs for a computer's operating system in a consistent manner.
+>
+> package, in which individual files or resources are packed together as a software collection that 
+>
+>> provides certain functionality as part of a larger system
+
