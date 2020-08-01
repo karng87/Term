@@ -31,7 +31,7 @@
   >>
   >> not abstract
 
-## archive
+## archive (cf. achieve)
 > a file 
 >> that is composed of one or more computer files along with __metadata__. 
 >
