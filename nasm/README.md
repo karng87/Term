@@ -110,4 +110,11 @@
 >
 >
 >
-
+# [system call function](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md)
+- rax - select system call 
+- rdi - used to pass 1st argument to functions
+- rsi - used to pass 2nd argument to functions
+- rdx - used to pass 3rd argument to functions
+- rcx - used to pass 4th argument to functions
+- r8 - used to pass 5th argument to functions
+- r9 - used to pass 6th argument to functions
