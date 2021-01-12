@@ -6,5 +6,8 @@
 | d | dd | resd | 4바이트 | 더블 워드(double word, dword) |
 | q | dq | resq | 8바이트 | 쿼드 워드(quard word, qword) |
 | t | dt | rest | 10 바이트 | 텐 바이트(ten byte, tbyte) |
+## times num (Arrary)
+- times 100 db 
+- times 20 resw  
 
 
