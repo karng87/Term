@@ -1,5 +1,6 @@
-1bit (2^1) = 2  
-8bit (2^8) = (16^2) = 16진수 두번째 자리
+1bit (전선 1가닥) (2^1) = 2가지 경우의 수를 표현가능
+
+8bit (전선 8가닥) (2^8) = (16^2) = 16진수 두번째 자리
 
 1byte (8 bit)
 - (16^2 = 0x ff)
@@ -17,7 +18,7 @@
 - (16^16 = 0x ffff ffff ffff ffff )
 - (dq) => 2^64 = 1.8446744e+19 (-9.223372e+18)  
 
-|2 byte|2 byte|2 byte|2 byte|-|Address|
+|4 byte|3 byte|2 byte|1 byte|-|Address|
 |---|---|---|---|---|---|
 |ff|ff|ff|f0|-|0000|
 |ff|ff|ff|f0|-|0004|
@@ -35,11 +36,27 @@
 |---|---|---|---|---|
 | b | db | resb | 1바이트 | 바이트(byte) |
 | w | dw | resw | 2바이트 | 워드(word) |
-| d | dd | resd | 4바이트 | 더블 워드(double word, dword) |
+| d(ㅣ) | dd | resd | 4바이트 | 더블 워드(double word, dword) |
 | q | dq | resq | 8바이트 | 쿼드 워드(quard word, qword) |
 | t | dt | rest | 10 바이트 | 텐 바이트(ten byte, tbyte) |
 ## times num (Arrary)
 - times 100 db (db x 100 )
 - times 20 resw  (resw x 20)
 
+> # Operator (OPCode)
+> ### DATA SCALE
+> b => 1byte
+> w => 2byte
+> l => 4byte (long word = 2 word)
+> 
+> ### move(x) src, des
+> - x is one of { b, w, l }
+> moveb src des => 1 byte
+>   - b is 1byte data scale
+> movew src des => 2 byte
+>   - w is 2byte data scale
+> movel src des => 4 byte 
+>   = 1 is 2 word (4 byte) data scale
+  
+# Operand
 
