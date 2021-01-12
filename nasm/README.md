@@ -44,12 +44,15 @@
 - times 20 resw  (resw x 20)
 
 > # Operator (OPCode)
+> OpCodeX
+> - X is one of a { b, w, l }
+>
 >> ### DATA SCALE
->> b => 1byte
->> w => 2byte
+>> b => 1byte  
+>> w => 2byte  
 >> l => 4byte (long word = 2 word)
 > 
->> ### move(x) src, des
+>> move(x) src, des
 >> - x is one of { b, w, l }
 >> moveb src des => 1 byte
 >>   - b is 1byte data scale
