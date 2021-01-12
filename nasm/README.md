@@ -70,16 +70,16 @@
 >   - register value
 >     - %
 >     - one of 8 integer register
-|register|||||
+|register|-|-|-|-|
 |---|---|---|---|---|
 |rax|eax|ax|ah|al|
 |rbx|ebx|bx|bh|bl|
 |rcx|ecx|cx|ch|cl|
 |rdx|edx|dx|dh|dl|
-|esp|
-|ebp|
-|si|
-|di|
+|esp|||||
+|ebp|||||
+|si|||||
+|di|||||
 
 >   - memory value
 >     - [register]
