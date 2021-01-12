@@ -44,8 +44,8 @@
 - times 20 resw  (resw x 20)
 
 > # Operator (OPCode)
-> OpCodeX
-> - X is one of a { b, w, l }
+> ## OpCodeX
+>   - X is one of a { b, w, l }
 >
 >> ### DATA SCALE
 >> b => 1byte  
