@@ -110,11 +110,21 @@
 >
 >
 >
-# [system call function](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md)
-- rax - select system call 
-- rdi - used to pass 1st argument to functions
-- rsi - used to pass 2nd argument to functions
-- rdx - used to pass 3rd argument to functions
-- rcx - used to pass 4th argument to functions
-- r8 - used to pass 5th argument to functions
-- r9 - used to pass 6th argument to functions
+# system call function 
+## [linux x86_64 system call table](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md)
+## mac => /usr/include/sys/syscall.h value + 0x02000000
+- lunux x86_64 syscall register
+  - rax - select system call 
+  - rdi - used to pass 1st argument to functions
+  - rsi - used to pass 2nd argument to functions
+  - rdx - used to pass 3rd argument to functions
+  - rcx - used to pass 4th argument to functions
+  - r8 - used to pass 5th argument to functions
+  - r9 - used to pass 6th argument to functions
+
+|arch	|syscall NR	|return	|arg0	|arg1	|arg2	|arg3	|arg4	|arg5|
+|---|---|---|---|---|---|---|---|---|
+|arm	|r7	|r0	|r0	|r1	|r2	|r3	|r4	|r5|
+|arm64	|x8	|x0	|x0	|x1	|x2	|x3	|x4	|x5|
+|x86	|eax	|eax	|ebx	|ecx	|edx	|esi	|edi	|ebp|
+|x86_64	|rax	|rax	|rdi	|rsi	|rdx	|r10	|r8	|r9|
