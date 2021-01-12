@@ -1,5 +1,10 @@
+1byte (db) => 2^8 = 256 (-128)
+2byte (dw) => 2^16 = 65536 (-32768)
+4byte (dd)=> 2^32 = 4294967296 (-2147483648)
+
+
 # [nasm blog] (https://hdnua.tistory.com/10)
-| 문자(Letter) | dx(initialize value)| resx(reserve space) | 단위(Unit) | another name |
+| 문자(Letter) | dx(data )| resx(reserve expanding) | 단위(Unit) | another name |
 |---|---|---|---|---|
 | b | db | resb | 1바이트 | 바이트(byte) |
 | w | dw | resw | 2바이트 | 워드(word) |
