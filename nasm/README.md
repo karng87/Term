@@ -70,7 +70,7 @@
 >   - register value
 >     - %
 >     - one of 8 integer register
-|register|-|-|-|-|
+|register|||||
 |---|---|---|---|---|
 |rax|eax|ax|ah|al|
 |rbx|ebx|bx|bh|bl|
