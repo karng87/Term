@@ -57,6 +57,33 @@
 >   - w is 2byte data scale
 > movel src des => 4 byte 
 >   = 1 is 2 word (4 byte) data scale
-  
-# Operand
+>  
+> # Operand
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
 
