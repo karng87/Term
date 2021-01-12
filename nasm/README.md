@@ -45,9 +45,9 @@
 
 > # Operator (OPCode)
 >> ### DATA SCALE
->>> b => 1byte
->>> w => 2byte
->>> l => 4byte (long word = 2 word)
+>> b => 1byte
+>> w => 2byte
+>> l => 4byte (long word = 2 word)
 > 
 >> ### move(x) src, des
 >>> - x is one of { b, w, l }
