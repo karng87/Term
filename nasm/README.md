@@ -44,7 +44,7 @@
 - times 20 resw  (resw x 20)
 
 > # Operator (OPCode)
-> ## OpCodeX
+> ## OpCode(X) Source, Destination
 >   - X is one of a { b, w, l }
 >
 >> ### DATA SCALE
@@ -62,9 +62,29 @@
 >>   = 1 is 2 word (4 byte) data scale
 >  
 > # Operand
->
->
->
+> - Source, Destination Type
+>   - immediate value
+>     - $
+>       - $0xffff
+>       - $0x-ffff       
+>   - register value
+>     - %
+>     - one of 8 integer register
+|register|||||
+|---|---|---|---|---|
+|rax|eax|ax|ah|al|
+|rbx|ebx|bx|bh|bl|
+|rcx|ecx|cx|ch|cl|
+|rdx|edx|dx|dh|dl|
+|esp|
+|ebp|
+|si|
+|di|
+
+>   - memory value
+>     - [register]
+>     - Num[register]
+>     - [register , offset]
 >
 >
 >
