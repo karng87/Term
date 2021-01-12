@@ -7,7 +7,7 @@
 | q | dq | resq | 8바이트 | 쿼드 워드(quard word, qword) |
 | t | dt | rest | 10 바이트 | 텐 바이트(ten byte, tbyte) |
 ## times num (Arrary)
-- times 100 db 
-- times 20 resw  
+- times 100 db (db x 100 )
+- times 20 resw  (resw x 20)
 
 
