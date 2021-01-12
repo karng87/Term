@@ -71,7 +71,7 @@
 >     - %
 >     - one of 8 integer register
 
-|register|||||
+|64 bit register|32 bit|16bit|8bit high|8bit low|
 |---|---|---|---|---|
 |rax|eax|ax|ah|al|
 |rbx|ebx|bx|bh|bl|
