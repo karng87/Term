@@ -44,19 +44,19 @@
 - times 20 resw  (resw x 20)
 
 > # Operator (OPCode)
-> ### DATA SCALE
-> b => 1byte
-> w => 2byte
-> l => 4byte (long word = 2 word)
+>> ### DATA SCALE
+>>> b => 1byte
+>>> w => 2byte
+>>> l => 4byte (long word = 2 word)
 > 
-> ### move(x) src, des
-> - x is one of { b, w, l }
-> moveb src des => 1 byte
->   - b is 1byte data scale
-> movew src des => 2 byte
->   - w is 2byte data scale
-> movel src des => 4 byte 
->   = 1 is 2 word (4 byte) data scale
+>> ### move(x) src, des
+>>> - x is one of { b, w, l }
+>>> moveb src des => 1 byte
+>>>   - b is 1byte data scale
+>>> movew src des => 2 byte
+>>>   - w is 2byte data scale
+>>> movel src des => 4 byte 
+>>>   = 1 is 2 word (4 byte) data scale
 >  
 > # Operand
 >
