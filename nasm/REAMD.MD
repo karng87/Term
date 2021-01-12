@@ -14,7 +14,7 @@
 - (16^16 = 0x ffff ffff ffff ffff )
 - (dq) => 2^64 = 1.8446744e+19 (-9.223372e+18)  
 
-|4 byte|3 byte|2 byte|1 byte|-|Address|
+|2 byte|2 byte|2 byte|2 byte|-|Address|
 |---|---|---|---|---|---|
 |ff|ff|ff|f0|-|0000|
 |ff|ff|ff|f0|-|0004|
