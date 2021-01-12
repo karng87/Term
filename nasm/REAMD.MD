@@ -3,17 +3,17 @@
 4byte (dd) => 2^32 = 4294967296 (-2147483648)  
 8bye  (dq) => 2^64 = 1.8446744e+19 (-9.223372e+18)  
 
-|2^64|-|2^32|2^16|||
+|2^64|-|2^32|2^16|-|Address|
 |---|---|---|---|---|---|
-|ff|ee|cc|bb|-|0000|
-|ff|ee|cc|bb|-|0004|
-|ff|ee|cc|bb|-|0008|
-|ff|ee|cc|bb|-|000c|
-|ff|ee|cc|bb|-|0010|
-|ff|ee|cc|bb|-|0014|
-|ff|ee|cc|bb|-|0018|
-|ff|ee|cc|bb|-|001c|
-|ff|ee|cc|bb|-|0020|
+|ff|ff|ff|f0|-|0000|
+|ff|ff|ff|f0|-|0004|
+|ff|ff|ff|f0|-|0008|
+|ff|ff|ff|f0|-|000c|
+|ff|ff|ff|f0|-|0010|
+|ff|ff|ff|f0|-|0014|
+|ff|ff|ff|f0|-|0018|
+|ff|ff|ff|f0|-|001c|
+|ff|ff|ff|f0|-|0020|
 
 
 # [nasm blog] (https://hdnua.tistory.com/10)
