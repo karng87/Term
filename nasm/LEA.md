@@ -27,25 +27,25 @@
       - the size of the source in memory is unimportant.
 
 #### This is a good, clean way 
-  - to place the address of a variable 
-    - into a register 
-      - prior to a procedure or interrupt call.
+    - to place the address of a variable 
+      - into a register 
+        - prior to a procedure or interrupt call.
 
 #### LEA can also be used 
-  - to ***perform register math***, 
-  - since the address specified in the second operand 
-    - is calculated but not accessed. 
+    - to ***perform register math***, 
+    - since the address specified in the second operand 
+      - is calculated but not accessed. 
     
-  - The address can thus be an address for which your program does not have permission to access. 
-    - Any math that can be expressed as a valid address calculation 
-      - may be done with LEA.
+    - The address can thus be an address for which your program does not have permission to access. 
+      - Any math that can be expressed as a valid address calculation 
+        - may be done with LEA.
 
 #### This is one of the few places 
-  - where NASM does not require a size specifier 
-    - before an operand that gives a memory address, again, 
-      - because LEA calculates the address 
-        - but moves no data to 
-        - or from that address.
+    - where NASM does not require a size specifier 
+      - before an operand that gives a memory address, again, 
+        - because LEA calculates the address 
+          - but moves no data to 
+          - or from that address.
 
         r8 = AL AH BL BH CL CH DL DH        r16 = AX BX CX DX BP SP SI DI  
         sr = CS DS SS ES FS GS              r32 = EAX EBX ECX EDX EBP ESP ESI EDI  
