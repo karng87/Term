@@ -24,7 +24,8 @@ parts of which can be omitted depending on the address you want.
 Example instructions,
 - mov	%ax,	100
 - mov	%eax,	-100(%eax)
-The first instruction moves the value in register AX into offset 100 of the data segment register (by default), and the second one moves the value in eax register to [eax-100].
+The first instruction moves the value in register AX into offset 100 of the data segment register (by default),  
+and the second one moves the value in eax register to [eax-100].
 
 
 
