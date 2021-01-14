@@ -1,3 +1,31 @@
+# 메모리 주소지정 [Memory Addressing](https://csiflabs.cs.ucdavis.edu/~ssdavis/50/att-syntax.htm)
+### In the AT&T Syntax, memory is referenced in the following way,
+#### segment-override:signed-offset(base,index,scale)
+parts of which can be omitted depending on the address you want.
+
+- %es:100(%eax,%ebx,2)
+       - Please note that the offsets and the scale should not be prefixed by '$'. 
+       - A few more examples with their equivalent NASM-syntax, should make things clearer,
+
+| GAS memory operand	|		| NASM memory operand |
+|------------------|			|-------------------|
+| 100					| [100]| 
+| %es:100				| [es:100]| 
+| (%eax)				| [eax]| 
+| (%eax,%ebx)				| [eax+ebx]| 
+| (%ecx,%ebx,2)			| [ecx+ebx*2]| 
+| (,%ebx,2)				| [ebx*2]| 
+| -10(%eax)				| [eax-10]| 
+| %ds:-10(%ebp)			| [ds:ebp-10]| 
+
+Example instructions,
+- mov	%ax,	100
+- mov	%eax,	-100(%eax)
+The first instruction moves the value in register AX into offset 100 of the data segment register (by default), and the second one moves the value in eax register to [eax-100].
+
+
+
+
 # 어셈 명령어
 ---
 8개의 범용 레지스터는 다음과 같다:
