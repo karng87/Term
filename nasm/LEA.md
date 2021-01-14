@@ -13,18 +13,18 @@
         LEA BP,MyWordVar           ;Loads offset of MyWordVar to BP  
 #### Notes:
     LEA 
-        - derives 
-                - the offset of the source operand from the start of its segment and 
-                - loads that offset into the destination operand. 
-                - The destination operand must be a register and 
-                - cannot be memory. 
+      - derives 
+      - the offset of the source operand from the start of its segment and 
+      - loads that offset into the destination operand. 
+      - The destination operand must be a register and 
+      - cannot be memory. 
   
-                - The source operand 
-                - must be a memory operand, but it can be any size. 
+      - The source operand 
+      - must be a memory operand, but it can be any size. 
     
-                - The address stored in the destination operand 
-                - is the address of the first byte of the source in memory, and 
-                - the size of the source in memory is unimportant.
+      - The address stored in the destination operand 
+      - is the address of the first byte of the source in memory, and 
+      - the size of the source in memory is unimportant.
 
 #### This is a good, clean way 
   - to place the address of a variable 
