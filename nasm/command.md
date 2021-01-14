@@ -1,14 +1,17 @@
-# 메모리 주소지정 [Memory Addressing](https://csiflabs.cs.ucdavis.edu/~ssdavis/50/att-syntax.htm)
+# 메모리 주소지정 [Memory Addressing](https://csiflabs.cs.ucdavis.edu/~ssdavis/50/att-syntax.htm) 
+
 ### In the AT&T Syntax, memory is referenced in the following way,
+
 #### segment-override:signed-offset(base,index,scale)
+
 parts of which can be omitted depending on the address you want.
 
-- %es:100(%eax,%ebx,2)
-       - Please note that the offsets and the scale should not be prefixed by '$'. 
-       - A few more examples with their equivalent NASM-syntax, should make things clearer,
+- %es:100(%eax,%ebx,2)  
+       - Please note that the offsets and the scale should not be prefixed by '$'.   
+       - A few more examples with their equivalent NASM-syntax, should make things clearer,  
 
 | GAS memory operand	|NASM memory operand |
-|---|			|---|
+|---|			---|
 | 100					| [100]| 
 | %es:100				| [es:100]| 
 | (%eax)				| [eax]| 
