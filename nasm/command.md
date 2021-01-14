@@ -7,8 +7,8 @@ parts of which can be omitted depending on the address you want.
        - Please note that the offsets and the scale should not be prefixed by '$'. 
        - A few more examples with their equivalent NASM-syntax, should make things clearer,
 
-| GAS memory operand	|		| NASM memory operand |
-|------------------|			|-------------------|
+| GAS memory operand	|NASM memory operand |
+|---|			|---|
 | 100					| [100]| 
 | %es:100				| [es:100]| 
 | (%eax)				| [eax]| 
