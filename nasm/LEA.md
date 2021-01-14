@@ -12,8 +12,8 @@
         LEA EBX,[EAX+EDX*4+128]    ;Loads calculated address into EBX  
         LEA BP,MyWordVar           ;Loads offset of MyWordVar to BP  
 #### Notes:
-        LEA 
-                - derives 
+    LEA 
+        - derives 
                 - the offset of the source operand from the start of its segment and 
                 - loads that offset into the destination operand. 
                 - The destination operand must be a register and 
