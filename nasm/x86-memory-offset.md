@@ -153,11 +153,14 @@ Dos supplies routines for finding and changing interrupt vectors.
 
 ##### The offset
 	can be calculated in a number of ways.   
-	Their are three elements that can make up an offset.   
-	___The first element___ is a base register, this can be one of the BX of BP registers (the BP register defaults to the stack segment).  
-	___The second element___ is one of the index register,  
-	SI or DI.  
-	___The third element___ is a displacement.  
+	Their are three elements that can make up an offset.  
+	
+	The first element is a base register, this can be one of the BX of BP registers (the BP register defaults to the stack segment).  
+	
+	The second element is one of the index register,  
+	SI or DI. 
+	
+	he third element is a displacement.  
 	A displacement can be a numerical value or an offset to a label.  
 	An offset can contain one to three of these elements, making a total of sixteen possibilities. 
 
@@ -167,7 +170,7 @@ Dos supplies routines for finding and changing interrupt vectors.
 	BP DI  
 	(base) (index)  
 
-	 The offset to a label in calculated ___using the assembler directive OFFSET___.   
+	 The offset to a label in calculated using the assembler directive OFFSET.   
 	This directive   
 	makes   
 	the assembler   
@@ -189,12 +192,12 @@ label	DW	?
 ---
 ### Addressing Examples
 #### Register
-	mov cs,ax
+	mov cs, ax
 The contents of the source register is copied into the destination register. 
 The source can only be a general purpose register.
 
 #### Immediate
-	mov ax,568
+	mov ax, 568
 
 The value 568 is moved to the register. 
 Only the general purpose registers can be used.
@@ -251,19 +254,17 @@ ie:
 would use the code segment instead of the data segment.
 ---
 
-7.9.1.6 Flags
-             fla  comments                                                  
-             g                                                              
-Overflow     OF   Set when their is a carry from the most significant bit   
-                  (MSB)                                                     
-Direction    DF   Used with the string instructions to indicate the         
-                  direction                                                 
-Interrupt    IF   Used to enable/disable interrupts                         
-Sign         SF   Set if the last operation resulted in a negative number   
-Zero         ZF   Set if last operation resulted in a zero                  
-Carry        CF   Show carry out or borrow into leftmost bit position       
-Parity       PF   Set if last operation resulted in an even parity          
-Aux Carry    AF   Indicates carry or borrow for eight bit operation         
+### Flags
+	|meaning      |flag  |comments|
+	|---|---|---|
+	|Overflow     |OF   |Set when their is a carry from the most significant bit(MSB)|                                                     
+	|Direction    |DF   |Used with the string instructions to indicate the direction |                                                
+	|Interrupt    |IF   |Used to enable/disable interrupts    |                     
+	|Sign         |SF   |Set if the last operation resulted in a negative number  | 
+	|Zero         |ZF   |Set if last operation resulted in a zero|                  
+	|Carry        |CF   |Show carry out or borrow into leftmost bit position |      
+	|Parity       |PF   |Set if last operation resulted in an even parity|         
+	|Aux Carry    |AF   |Indicates carry or borrow for eight bit operation |        
 
 7.9.1.6.1 Flag register
 15 0
