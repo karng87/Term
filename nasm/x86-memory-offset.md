@@ -1,280 +1,253 @@
-7.9. 8086 ASSEMBLY LANGUAGE
-7.9 8086
-7.9.1 Programming Card
-7.9.1.1 8086 Registers
-General Registers - These are the registers that are used for general purposes
+# [8086 ASSEMBLY LANGUAGE](https://www.cs.uregina.ca/Dept/manuals/Manuals/7Language/7_9_8086/7_9Assembly.html)
 
+### 8086 Registers
 
-AX       accumulator (16 bit)              
-AH       accumulator high-order byte (8    
-         bit)                              
-AL       accumulator low-order byte (8     
-         bit)                              
-BX       accumulator (16 bit)              
-BH       accumulator high-order byte (8    
-         bit)                              
-BL       accumulator low-order byte (8     
-         bit)                              
-CX       count and accumulator (16 bit)    
-CH       count high order byte (8 bit)     
-CL       count low order byte (8 bit)      
-DX       data and I/O address (16 bit)     
-DH       data high order byte (8 bit)      
-DL       data low order byte (8 bit)       
+#### General Registers - These are the registers that are used for general purposes
+	AX       accumulator (16 bit)              
+	AH       accumulator high-order byte (8 bit)                              
+	AL       accumulator low-order byte (8 bit)   
 
-Segment Registers - These registers are use to calculate 20 bit address from 16 bit registers.
+	BX       accumulator (16 bit)              
+	BH       accumulator high-order byte (8 bit)                              
+	BL       accumulator low-order byte (8 bit)      
 
+	CX       count and accumulator (16 bit)    
+	CH       count high order byte (8 bit)     
+	CL       count low order byte (8 bit)      
 
-CS       code segment (16 bit)             
-DS       data segment (16 bit)             
-SS       stack segment (16 bit)            
-ES       extra segment (16 bit)            
+	DX       data and I/O address (16 bit)     
+	DH       data high order byte (8 bit)      
+	DL       data low order byte (8 bit)       
 
-Index Registers - These registers are used with the string instructions.
+#### Segment Registers - These registers are use to calculate 20 bit address from 16 bit registers.
+	CS       code segment (16 bit)             
+	DS       data segment (16 bit)             
+	SS       stack segment (16 bit)            
+	ES       extra segment (16 bit)            
 
+#### Index Registers - These registers are used with ___the string instructions___.
+	DI       destination index (16 bit)        
+	SI       source index (16 bit)             
 
-DI       destination index (16 bit)        
-SI       source index (16 bit)             
+#### Pointers - These registers are used with the segment register to obtain 20 bit addresses
+	SP       stack pointer (16 bit)            
+	BP       base pointer (16 bit)             
+	IP       instruction pointer (16 bit)      
+---
 
-Pointers - These registers are used with the segment register to obtain 20 bit addresses
-
-
-SP       stack pointer (16 bit)            
-BP       base pointer (16 bit)             
-IP       instruction pointer (16 bit)      
-
-7.9.1.2 Interrupt (Trap) Vectors
-
-
+### Interrupt (Trap) Vectors
 Dos supplies routines for finding and changing interrupt vectors.
 
-7.9.1.3 BIOS DATA AREA Addresses
-
-ADDR       SIZE       DESCRIPTION                                                
-40:00      WORD       COM1 PORT ADDRESS                                          
-40:02      WORD       COM2 PORT ADDRESS                                          
-40:04      WORD       COM3 PORT ADDRESS                                          
-40:06      WORD       COM4 PORT ADDRESS                                          
-40:08      WORD       LPT1 PORT ADDRESS                                          
-40:0A      WORD       LPT2 PORT ADDRESS                                          
-40:0C      WORD       LPT3 PORT ADDRESS                                          
-40:0E      WORD       LPT4 PORT ADDRESS                                          
-40:10      WORD       EQUIPMENT FLAG (SEE INT 11)                                
-40:13      WORD       MEMORY SIZE IN KBYTES                                      
-40:17      BYTE       KEYBOARD FLAG BYTE 0 (SEE INT 9)                           
-40:18      BYTE       KEYBOARD FLAG BYTE 1 (SEE INT 9                            
-40:19      BYTE       STORAGE FOR ALTERNATE KEYPAD ENTRY                         
-40:1A      WORD       POINTER TO KEYBOARD BUFFER HEAD                            
-40:1C      WORD       POINTER TO KEYBOARD BUFFER TAIL                            
-40:1E      20BYTES    KEYBOARD BUFFER                                            
-40:3E      BYTE       DRIVE RECALIBRATION STATUS                                 
-40:3F      BYTE       MOTOR STATUS                                               
-40:3E      BYTE       DRIVE RECALIBRATION STATUS                                 
-40:3F      BYTE        MOTOR STATUS                                              
-40:40      BYTE       MOTOR OFF COUNTER (DECR. BY TIMER)                         
-40:41      BYTE       STATUS OF LAST DISKETTE OPERATION                          
-40:42      7 BYTES    NEC STATUS                                                 
-40:49      BYTE       CURRENT CRT MODE                                           
-40:4A      WORD       NUMBER OF COLUMNS ON SCREEN                                
-40:4C      WORD       REGEN BUFFER LENGTH IN BYTES                               
-40:4E      WORD       STARTING OFFSET OF REGEN BUFFER                            
-40:50      8 WORDS    CURSOR POSITION PAGES 1-8                                  
-40:60      BYTE       END LINE FOR CURSOR                                        
-40:61      BYTE       START LINE FOR CURSOR                                      
-40:62      BYTE       CURRENT PAGE BEING DISPLAYED                               
-40:63      WORD       BASE PORT ADDRESS FOR ACTIVE DISPLAY                       
-40:65      BYTE       CURRENT SETTING OF THE 3X8 REGISTER                        
-40:66      BYTE       CURRENT PALETTE SETTING COLOR CARD                         
-40:67      DWORD      TEMP. STORAGE FOR SS:SP DURING SHUTDOWN                    
-40:6C      DWORD      TIMER COUNTER LOW WORD, HIGH WORD                          
-40:70      BYTE       24 HOUR TIMER OVERFLOW                                     
-40:71      BYTE       BIOS BREAK FLAG (BIT 7 = BREAK KEY HIT)                    
-40:72      WORD       RESET FLAG (1234 = SOFT RESET)                             
-40:74      BYTE       STATUS OF LAST HARD DISK OPERATION                         
-40:75      BYTE       NUMBER OF HARD FILES ATTACHED                              
-40:77      BYTE       PORT OFFSET TO CURRENT HF ADAPTER                          
-40:78      4 BYTES    TIMEOUT VALUE FOR LPT1,LPT2,LPT3,LPT4                      
-40:7C      4 BYTES    TIMEOUT VALUE FOR COM1,COM2,COM3,COM4                      
-40:80      WORD       KEYBOARD BUFFER START OFFSET (SEG=40)                      
-40:82      WORD       KEYBOARD BUFFER END OFFSET (SEG=40H)                       
-40:84      BYTE       ROWS ON THE SCREEN (EGA ONLY)                              
-40:85      WORD       BYTES PER CHARACTER (EGA ONLY)                             
-40:87      BYTE       MODE OPTIONS (EGA ONLY)                                    
-40:88      BYTE       FEATURE BIT SWITCHES (EGA ONLY)                            
-40:8B      BYTE       LAST DISKETTE DATA RATE SELECTED                           
-40:8C      BYTE       HARD FILE STATUS RETURNED BY CONTROLLER                    
-40:8D      BYTE       HARD FILE ERROR RETURNED BY CONTROLLER                     
-40:8E      BYTE       HARD FILE INTERRUPT (BIT 7=WORKING INT)                    
-40:90      4 BYTES    MEDIA STATE DRIVE 0,1,2,3                                  
-40:94      2 BYTES    TRACK CURRENTLY SEEKED TO DRIVE 0,1                        
-40:96      BYTE       KEYBOARD FLAG BYTE 3 (SEE INT 9)                           
-40:97      BYTE       KEYBOARD FLAG BYTE 2 (SEE INT 9)                           
-40:98      DWORD      POINTER TO USERS WAIT FLAG                                 
-40:9C      DWORD      USERS TIMEOUT VALUE IN MICROSECONDS                        
-40:A0      BYTE       RTC WAIT FUNCTION IN USE                                   
-40:A1      BYTE       LANA DMA CHANNEL FLAGS                                     
-40:A2      2 BYTES    STATUS LANA 0,1                                            
-40:A4      DWORD      SAVED HARDFILE INTERRUPT VECTOR                            
-40:A8      DWORD      EGA POINTER TO PARAMETER TABLE                             
-40:B4      BYTE       KEYBOARD NMI CONTROL FLAGS (CONVERTIBLE)                   
-40:B5      DWORD      KEYBOARD BREAK PENDING FLAGS (CONVERTIBLE)                 
-40:B9      BYTE       PORT 60 SINGLE BYTE QUEUE (CONVERTIBLE)                    
-40:BA      BYTE       SCAN CODE OF LAST KEY (CONVERTIBLE)                        
-40:BB      BYTE       POINTER TO NMI BUFFER HEAD (CONVERTIBLE)                   
-40:BC      BYTE       POINTER TO NMI BUFFER TAIL (CONVERTIBLE)                   
-40:BD      16BYTES    NMI SCAN CODE BUFFER (CONVERTIBLE)                         
-40:CE      WORD       DAY COUNTER (CONVERTIBLE AND AFTER)                        
-50:00      BYTE       PRINT SCREEN STATUS BYTE                                   
-
-
-7.9.1.4 Memory address calculations
-The 8086 uses a 20 bit address bus but the registers are only sixteen bit. To derive twenty bit addresses from the registers two registers are combined. Every memory reference uses one of the four segment registers plus an offset and/or a base pointer and/or a index register. The segment register is multiplied by sixteen (shifted to the left four bits) and added to the sixteen bit result of the offset calculation.
+#### BIOS DATA AREA Addresses
+	ADDR       SIZE       DESCRIPTION                                                
+	40:00      WORD       COM1 PORT ADDRESS                                          
+	40:02      WORD       COM2 PORT ADDRESS                                          
+	40:04      WORD       COM3 PORT ADDRESS                                          
+	40:06      WORD       COM4 PORT ADDRESS                                          
+	40:08      WORD       LPT1 PORT ADDRESS                                          
+	40:0A      WORD       LPT2 PORT ADDRESS                                          
+	40:0C      WORD       LPT3 PORT ADDRESS                                          
+	40:0E      WORD       LPT4 PORT ADDRESS                                          
+	40:10      WORD       EQUIPMENT FLAG (SEE INT 11)                                
+	40:13      WORD       MEMORY SIZE IN KBYTES                                      
+	40:17      BYTE       KEYBOARD FLAG BYTE 0 (SEE INT 9)                           
+	40:18      BYTE       KEYBOARD FLAG BYTE 1 (SEE INT 9                            
+	40:19      BYTE       STORAGE FOR ALTERNATE KEYPAD ENTRY                         
+	40:1A      WORD       POINTER TO KEYBOARD BUFFER HEAD                            
+	40:1C      WORD       POINTER TO KEYBOARD BUFFER TAIL                            
+	40:1E      20BYTES    KEYBOARD BUFFER                                            
+	40:3E      BYTE       DRIVE RECALIBRATION STATUS                                 
+	40:3F      BYTE       MOTOR STATUS                                               
+	40:3E      BYTE       DRIVE RECALIBRATION STATUS                                 
+	40:3F      BYTE        MOTOR STATUS                                              
+	40:40      BYTE       MOTOR OFF COUNTER (DECR. BY TIMER)                         
+	40:41      BYTE       STATUS OF LAST DISKETTE OPERATION                          
+	40:42      7 BYTES    NEC STATUS                                                 
+	40:49      BYTE       CURRENT CRT MODE                                           
+	40:4A      WORD       NUMBER OF COLUMNS ON SCREEN                                
+	40:4C      WORD       REGEN BUFFER LENGTH IN BYTES                               
+	40:4E      WORD       STARTING OFFSET OF REGEN BUFFER                            
+	40:50      8 WORDS    CURSOR POSITION PAGES 1-8                                  
+	40:60      BYTE       END LINE FOR CURSOR                                        
+	40:61      BYTE       START LINE FOR CURSOR                                      
+	40:62      BYTE       CURRENT PAGE BEING DISPLAYED                               
+	40:63      WORD       BASE PORT ADDRESS FOR ACTIVE DISPLAY                       
+	40:65      BYTE       CURRENT SETTING OF THE 3X8 REGISTER                        
+	40:66      BYTE       CURRENT PALETTE SETTING COLOR CARD                         
+	40:67      DWORD      TEMP. STORAGE FOR SS:SP DURING SHUTDOWN                    
+	40:6C      DWORD      TIMER COUNTER LOW WORD, HIGH WORD                          
+	40:70      BYTE       24 HOUR TIMER OVERFLOW                                     
+	40:71      BYTE       BIOS BREAK FLAG (BIT 7 = BREAK KEY HIT)                    
+	40:72      WORD       RESET FLAG (1234 = SOFT RESET)                             
+	40:74      BYTE       STATUS OF LAST HARD DISK OPERATION                         
+	40:75      BYTE       NUMBER OF HARD FILES ATTACHED                              
+	40:77      BYTE       PORT OFFSET TO CURRENT HF ADAPTER                          
+	40:78      4 BYTES    TIMEOUT VALUE FOR LPT1,LPT2,LPT3,LPT4                      
+	40:7C      4 BYTES    TIMEOUT VALUE FOR COM1,COM2,COM3,COM4                      
+	40:80      WORD       KEYBOARD BUFFER START OFFSET (SEG=40)                      
+	40:82      WORD       KEYBOARD BUFFER END OFFSET (SEG=40H)                       
+	40:84      BYTE       ROWS ON THE SCREEN (EGA ONLY)                              
+	40:85      WORD       BYTES PER CHARACTER (EGA ONLY)                             
+	40:87      BYTE       MODE OPTIONS (EGA ONLY)                                    
+	40:88      BYTE       FEATURE BIT SWITCHES (EGA ONLY)                            
+	40:8B      BYTE       LAST DISKETTE DATA RATE SELECTED                           
+	40:8C      BYTE       HARD FILE STATUS RETURNED BY CONTROLLER                    
+	40:8D      BYTE       HARD FILE ERROR RETURNED BY CONTROLLER                     
+	40:8E      BYTE       HARD FILE INTERRUPT (BIT 7=WORKING INT)                    
+	40:90      4 BYTES    MEDIA STATE DRIVE 0,1,2,3                                  
+	40:94      2 BYTES    TRACK CURRENTLY SEEKED TO DRIVE 0,1                        
+	40:96      BYTE       KEYBOARD FLAG BYTE 3 (SEE INT 9)                           
+	40:97      BYTE       KEYBOARD FLAG BYTE 2 (SEE INT 9)                           
+	40:98      DWORD      POINTER TO USERS WAIT FLAG                                 
+	40:9C      DWORD      USERS TIMEOUT VALUE IN MICROSECONDS                        
+	40:A0      BYTE       RTC WAIT FUNCTION IN USE                                   
+	40:A1      BYTE       LANA DMA CHANNEL FLAGS                                     
+	40:A2      2 BYTES    STATUS LANA 0,1                                            
+	40:A4      DWORD      SAVED HARDFILE INTERRUPT VECTOR                            
+	40:A8      DWORD      EGA POINTER TO PARAMETER TABLE                             
+	40:B4      BYTE       KEYBOARD NMI CONTROL FLAGS (CONVERTIBLE)                   
+	40:B5      DWORD      KEYBOARD BREAK PENDING FLAGS (CONVERTIBLE)                 
+	40:B9      BYTE       PORT 60 SINGLE BYTE QUEUE (CONVERTIBLE)                    
+	40:BA      BYTE       SCAN CODE OF LAST KEY (CONVERTIBLE)                        
+	40:BB      BYTE       POINTER TO NMI BUFFER HEAD (CONVERTIBLE)                   
+	40:BC      BYTE       POINTER TO NMI BUFFER TAIL (CONVERTIBLE)                   
+	40:BD      16BYTES    NMI SCAN CODE BUFFER (CONVERTIBLE)                         
+	40:CE      WORD       DAY COUNTER (CONVERTIBLE AND AFTER)                        
+	50:00      BYTE       PRINT SCREEN STATUS BYTE                                   
 
 
+### Memory address calculations
+	The 8086 uses a ___20 bit address bus___ 
+	but the registers are ___only sixteen bit___. 
 
-The 8086 provides four segment registers for address calculations. Each segment register is assigned a different task. The code segment register is always used with the instruction pointer (also called the program counter) to point to the instruction that is to be executed next. The stack segment register is always used with the stack pointer to point to the last value pushed onto the stack. The extra segment is general purpose segment register. The data segment register is the default register to calculate data operations, this can be over ridden by specifying the segment register. For example mov ax,var1 would use the offset var1 and the data segment to calculate the memory reference but mov ax,ss:var1 would use the offset var1 and the stack segment register to calculate the memory reference.
+	To derive twenty bit addresses from the registers 
+	two registers are combined. 
 
-The offset can be calculated in a number of ways. Their are three elements that can make up an offset. The first element is a base register, this can be one of the BX of BP registers (the BP register defaults to the stack segment). The second element is one of the index register, SI or DI. The third element is a displacement. A displacement can be a numerical value or an offset to a label. An offset can contain one to three of these elements, making a total of sixteen possibilities.
+	Every memory reference 
+	uses 
+	one of the four segment registers 
+	plus an offset and/or a base pointer and/or a index register. 
 
-BX SI
+	The segment register is multiplied by sixteen (shifted to the left four bits) 
+	and added to the sixteen bit result of the offset calculation.
 
-or + or + Displacement
+	The 8086 provides four segment registers for address calculations. 
+	Each segment register is assigned a different task. 
 
-BP DI
+	The code segment register is always used with the instruction pointer (also called the program counter) 
+	to point to the instruction that is to be executed next. 
 
-(base) (index)
+	The stack segment register is always used with the stack pointer to point to the last value pushed onto the stack. 
 
+	The extra segment is general purpose segment register. 
 
+___The data segment register___ is the default register to calculate data operations, 
+	this can be over ridden by specifying the segment register. 
+	For example 
+	mov ax,var1 
+	would use the offset var1 
+	and the data segment to calculate the memory reference 
+	but mov ax,ss:var1 would use the offset var1 
+	and the stack segment register to calculate the memory reference.
 
-The offset to a label in calculated using the assembler directive OFFSET. This directive makes the assembler calculate the distant from the start of the segment that the label resides in to the label. For example
+___The offset___ can be calculated in a number of ways. 
+	Their are three elements that can make up an offset.  
+	___The first element___ is a base register, this can be one of the BX of BP registers (the BP register defaults to the stack segment). 
+	___The second element___ is one of the index register, 
+	SI or DI. 
+	___The third element___ is a displacement. 
+	A displacement can be a numerical value or an offset to a label. 
+	An offset can contain one to three of these elements, making a total of sixteen possibilities.
 
-	
+	BX SI
+	or + or + Displacement
 
-	.
+	BP DI
+	(base) (index)
 
+	 The offset to a label in calculated ___using the assembler directive OFFSET___. 
+	This directive 
+	makes 
+	the assembler 
+	calculate the distant from the start of the segment that the label resides in to the label. 
 
-	.
+For example
+```asm
 
-
-	.
-
-
-	.DATA
-
-
-	.
-
-
-	.
-
+.DATA
 
 label	DW	?
 
+.CODE
 
-	.
+	mov di, OFFSET label	;loads the offset 
+				; from the start of the data segment (.DATA) 
+				; to the label into di
+```
+---
+### Addressing Examples
+#### Register
+	mov cs,ax
+The contents of the source register is copied into the destination register. 
+The source can only be a general purpose register.
 
+#### Immediate
+	mov ax,568
 
-	.
-
-
-	                    .CODE
-
-
-	.
-
-
-	.
-
-
-	mov	di,OFFSET label	;loads the offset from the start of the   
-
-
-	.				; data segment (.DATA) to the label in 					;to di
+The value 568 is moved to the register. 
+Only the general purpose registers can be used.
 
 
-	.
+#### Direct
+```asm
 
-
-	.
-
-
-
-
-
-7.9.1.5 Addressing Examples
-7.9.1.5.1 Register
-mov cs,ax
-
-The contents of the source register is copied into the destination register. The source can only be a general purpose register.
-
-7.9.1.5.2 Immediate
-mov ax,568
-
-The value 568 is moved to the register. Only the general purpose registers can be used.
-
-
-7.9.1.5.3 Direct
-
-	.DATA
-
-
+.DATA
 count 	DW ?
+.CODE`
+	mov cx, count
+```
 
+The value pointed to by the offset (count) 
+and 
+segment register is loaded into the register. 
 
-	.CODE`
+Only the general purpose registers can be used.
 
+#### Register indirect
+```asm
 
-	mov	cx,count
+.DATA
+count	DW  DUP(?) # Duplicate UP = DUP(?)
 
+.CODE
+	mov ax, [si]
 
+```
+The value pointed to by ___the index register___  
+and  
+the segment register is loaded into the general purpose register.
 
-The value pointed to by the offset (count) and segment register is loaded into the register. Only the general purpose registers can be used.
-
-
-7.9.1.5.4 Register indirect
-
-	.DATA
-
-
-count	DW  DUP(?)
-
-
-	.CODE
-
-
-	mov	ax,[si]
-
-
-
-The value pointed to by the index register and the segment register is loaded into the general purpose register.
-
-
-7.9.1.5.5 Register indirect with displacement
+#### Register indirect with displacement(변위)
 	
+	mov 	ax, [count+di]
 
-	mov 	ax,[count+di]
+The value pointed to by ___the index register___,  
+the offset and the segment register is loaded into the general purpose register.
 
+#### Register indirect with base and index
 
+	mov 	[bp+di], ax
+	mov	ax, [bp+di]
 
-The value pointed to by the index register, the offset and the segment register is loaded into the general purpose register.
+The value pointed to by ___the index register and the base register___  
+is loaded into the general purpose register.
 
-
-
-7.9.1.5.6 Register indirect with base and index
-
-	mov 	[bp+di],ax
-
-
-or	mov	ax,[bp+di]
-
-
-
-
-
-The value pointed to by the index register and the base register is loaded into the general purpose register.
-
-Note: The data segment register is used to calculate the 20 bit address unless aH segment register is specified. ie: mov ax,cs:count would use the code segment instead of the data segment.
-
+Note: ___The data segment register___ is used to calculate ___the 20 bit address___  
+unless aH segment register is specified.  
+ie: 
+	mov ax, cs:count 
+would use the code segment instead of the data segment.
+---
 
 7.9.1.6 Flags
              fla  comments                                                  
