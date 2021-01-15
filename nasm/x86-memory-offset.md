@@ -141,35 +141,37 @@ Dos supplies routines for finding and changing interrupt vectors.
 
 	The extra segment is general purpose segment register. 
 
-___The data segment register___ is the default register to calculate data operations, 
-	this can be over ridden by specifying the segment register. 
-	For example 
-	mov ax,var1 
-	would use the offset var1 
-	and the data segment to calculate the memory reference 
-	but mov ax,ss:var1 would use the offset var1 
-	and the stack segment register to calculate the memory reference.
+___The data segment register___ 
+	is the default register to calculate data operations,  
+	this can be over ridden by specifying the segment register.   
+	For example  
+	mov ax,var1  
+	would use the offset var1  
+	and the data segment to calculate the memory reference  
+	but mov ax,ss:var1 would use the offset var1  
+	and the stack segment register to calculate the memory reference.  
 
-___The offset___ can be calculated in a number of ways. 
-	Their are three elements that can make up an offset.  
-	___The first element___ is a base register, this can be one of the BX of BP registers (the BP register defaults to the stack segment). 
-	___The second element___ is one of the index register, 
-	SI or DI. 
-	___The third element___ is a displacement. 
-	A displacement can be a numerical value or an offset to a label. 
-	An offset can contain one to three of these elements, making a total of sixteen possibilities.
+___The offset___ 
+	can be calculated in a number of ways.   
+	Their are three elements that can make up an offset.   
+	___The first element___ is a base register, this can be one of the BX of BP registers (the BP register defaults to the stack segment).  
+	___The second element___ is one of the index register,  
+	SI or DI.  
+	___The third element___ is a displacement.  
+	A displacement can be a numerical value or an offset to a label.  
+	An offset can contain one to three of these elements, making a total of sixteen possibilities. 
 
-	BX SI
-	or + or + Displacement
+	BX SI  
+	or + or + Displacement  
 
-	BP DI
-	(base) (index)
+	BP DI  
+	(base) (index)  
 
-	 The offset to a label in calculated ___using the assembler directive OFFSET___. 
-	This directive 
-	makes 
-	the assembler 
-	calculate the distant from the start of the segment that the label resides in to the label. 
+	 The offset to a label in calculated ___using the assembler directive OFFSET___.   
+	This directive   
+	makes   
+	the assembler   
+	calculate the distant from the start of the segment that the label resides in to the label.   
 
 For example
 ```asm
