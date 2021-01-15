@@ -141,7 +141,7 @@ Dos supplies routines for finding and changing interrupt vectors.
 
 	The extra segment is general purpose segment register. 
 
-___The data segment register___ 
+##### The data segment register
 	is the default register to calculate data operations,  
 	this can be over ridden by specifying the segment register.   
 	For example  
@@ -151,7 +151,7 @@ ___The data segment register___
 	but mov ax,ss:var1 would use the offset var1  
 	and the stack segment register to calculate the memory reference.  
 
-___The offset___ 
+##### The offset
 	can be calculated in a number of ways.   
 	Their are three elements that can make up an offset.   
 	___The first element___ is a base register, this can be one of the BX of BP registers (the BP register defaults to the stack segment).  
