@@ -255,16 +255,16 @@ would use the code segment instead of the data segment.
 ---
 
 ### Flags
-	|meaning      |flag  |comments|
-	|---|---|---|
-	|Overflow     |OF   |Set when their is a carry from the most significant bit(MSB)|                                                     
-	|Direction    |DF   |Used with the string instructions to indicate the direction |                                                
-	|Interrupt    |IF   |Used to enable/disable interrupts    |                     
-	|Sign         |SF   |Set if the last operation resulted in a negative number  | 
-	|Zero         |ZF   |Set if last operation resulted in a zero|                  
-	|Carry        |CF   |Show carry out or borrow into leftmost bit position |      
-	|Parity       |PF   |Set if last operation resulted in an even parity|         
-	|Aux Carry    |AF   |Indicates carry or borrow for eight bit operation |        
+|meaning      |flag  |comments|
+|---|---|---|
+|Overflow     |OF   |Set when their is a carry from the most significant bit(MSB)|                                                     
+|Direction    |DF   |Used with the string instructions to indicate the direction |                                                
+|Interrupt    |IF   |Used to enable/disable interrupts    |                     
+|Sign         |SF   |Set if the last operation resulted in a negative number  | 
+|Zero         |ZF   |Set if last operation resulted in a zero|                  
+|Carry        |CF   |Show carry out or borrow into leftmost bit position |      
+|Parity       |PF   |Set if last operation resulted in an even parity|         
+|Aux Carry    |AF   |Indicates carry or borrow for eight bit operation |        
 
 7.9.1.6.1 Flag register
 15 0
